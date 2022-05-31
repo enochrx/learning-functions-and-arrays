@@ -165,3 +165,23 @@ console.log(friends.includes('Jonah'))
 if (friends.includes('Michael')) {
     console.log('I once had a friend named Michael')
 }
+
+//Coding Challenge #2
+const calcTip = function (bill) {
+    return bill <= 300 && bill >= 50 ? bill * 0.15 : bill * 0.2
+};
+
+const bill1 = calcTip(100);
+const bill2 = calcTip(125);
+const bill3 = calcTip(555);
+const bill4 = calcTip(44);
+console.log(bill1);
+console.log(bill2);
+console.log(bill3);
+console.log(bill4);
+
+const bills = [125, 555, 44];
+const tips = [calcTip(125), calcTip(555), calcTip(44)]
+console.log(tips);
+const totalValue = [(125 + calcTip(125)), (555 + calcTip(555)), (44 + calcTip(44))];
+console.log(totalValue)
