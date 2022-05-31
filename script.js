@@ -171,23 +171,27 @@ const calcTip = function (bill) {
     return bill <= 300 && bill >= 50 ? bill * 0.15 : bill * 0.2
 };
 
-const bill1 = calcTip(100);
-const bill2 = calcTip(125);
-const bill3 = calcTip(555);
-const bill4 = calcTip(44);
-console.log(bill1);
-console.log(bill2);
-console.log(bill3);
-console.log(bill4);
-
+const tip1 = calcTip(100);
+const tip2 = calcTip(125);
+const tip3 = calcTip(555);
+const tip4 = calcTip(44);
+console.log(tip1, tip2, tip3, tip4);
 const bills = [125, 555, 44];
-// const tips = [calcTip(125), calcTip(555), calcTip(44)]
-// console.log(tips);
-// const totalValue = [(125 + calcTip(125)), (555 + calcTip(555)), (44 + calcTip(44))];
-// console.log(totalValue);
-const tips = [calcTip(bills[0]), calcTip(bills[1]), calcTip(bills[2])];
+//coding style #1
+let tips = [calcTip(125), calcTip(555), calcTip(44)]
+console.log(tips);
 
-const totalValue = [calcTip(bills[0] + bills[0]), bills[1] + calcTip(bills[1]), bills[2] + calcTip(bills[2])];
+let totalValue = [(125 + calcTip(125)), (555 + calcTip(555)), (44 + calcTip(44))];
+console.log(totalValue);
+
+//coding style #2
+tips = [calcTip(bills[0]), calcTip(bills[1]), calcTip(bills[2])];
+
+totalValue = [calcTip(bills[0] + bills[0]), bills[1] + calcTip(bills[1]), bills[2] + calcTip(bills[2])];
+console.log(totalValue);
+
+//coding style #3
+totalValue = [tips[0] + bills[0], bills[1] + tips[1], bills[2] + tips[2]];
 
 console.log(totalValue);
-console.log(tips)
+console.log(tips);
