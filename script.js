@@ -195,3 +195,35 @@ totalValue = [tips[0] + bills[0], bills[1] + tips[1], bills[2] + tips[2]];
 
 console.log(totalValue);
 console.log(tips);
+
+//Intro to Objects - have values called 'properties' defined by curly braces '{}'
+const enoch = {
+    firstName: 'Damilare',
+    lastName: 'Olaniran',
+    job: 'Pharmacist',
+    age: 2021 - 1995,
+    friends: ['Gabriel', 'Moses', 'Jonah'],
+    spouse: 'Damilola'
+};
+console.log(enoch);
+
+//dots and brackets in Object
+console.log(enoch.job); // dot "." - an operator, retrieves a property of an object
+console.log(enoch['age']); //brackets are used to also call the property as a string
+
+//Using string concatenation, we can still call a property in an object to produce a value correcting to the property
+const nameCode = 'Name';
+
+console.log(enoch['first' + nameCode])
+console.log(enoch['last' + nameCode])
+
+//bracket notation in object has more utility esp for Users Inferface - UI
+const developerInfo = prompt('What would you like to know about Enoch?: firstName, lastName, job, friends, spouse');
+
+if (enoch[developerInfo]) {
+    console.log(enoch[developerInfo]);
+} else { console.log("Invalid Entry! Choose from the options: 'firstName, lastName, job, friends, spouse' only"); prompt('What would you like to know about Enoch?: firstName, lastName, job, friends, spouse'); console.log(enoch[developerInfo]) };
+
+
+
+
