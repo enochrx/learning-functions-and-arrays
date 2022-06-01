@@ -197,7 +197,7 @@ console.log(totalValue);
 console.log(tips);
 
 //Intro to Objects - have values called 'properties' defined by curly braces '{}'
-const enoch = {
+/*const enoch = {
     firstName: 'Damilare',
     lastName: 'Olaniran',
     job: 'Pharmacist',
@@ -211,6 +211,11 @@ console.log(enoch);
 console.log(enoch.job); // dot "." - an operator, retrieves a property of an object
 console.log(enoch['age']); //brackets are used to also call the property as a string
 
+//Using dot and bracket to add more property to the object
+
+enoch.location = 'Nigeria'
+enoch['nationality'] = 'Nigerian'
+
 //Using string concatenation, we can still call a property in an object to produce a value correcting to the property
 const nameCode = 'Name';
 
@@ -223,7 +228,81 @@ const developerInfo = prompt('What would you like to know about Enoch?: firstNam
 if (enoch[developerInfo]) {
     console.log(enoch[developerInfo]);
 } else { console.log("Invalid Entry! Choose from the options: 'firstName, lastName, job, friends, spouse' only"); prompt('What would you like to know about Enoch?: firstName, lastName, job, friends, spouse'); console.log(enoch[developerInfo]) };
+ */
+
+//Object Method - functions in object
+const enoch = {
+    firstName: 'Damilare',
+    lastName: 'Olaniran',
+    job: 'Pharmacist',
+    age: 2021 - 1995,
+    birthYear: 1995,
+    friends: ['Gabriel', 'Moses', 'Jonah'],
+    spouse: 'Damilola',
+    hasDriversLicense: false,
+
+    // calcAge: function (birthYear) {
+    //     return 2022 - birthYear;
+    // }
+
+    // calcAge: function () {
+    //     return 2022 - this.birthYear;
+    // }
+
+    calcAge: function () {
+        this.age = 2022 - this.birthYear;
+        return this.age
+    },
+    getSummary: function () { return `${this.firstName} is a ${this.age}-year old ${enoch.job} and he has ${this.hasDriversLicense ? 'a' : 'no'} driver's license` }
+};
+
+enoch.location = 'Nigeria'
+enoch['nationality'] = 'Nigerian';
+
+console.log(enoch);
+console.log(enoch.calcAge())
+console.log(enoch.age)
+
+console.log(enoch.getSummary())
+//console.log(enoch['calcAge'](1994))
+
+//////////////////////////
+//Coding Challenge #3
+mark = {
+    firstName: 'Mark',
+    lastName: 'Miller',
+    mass: 78,
+    height: 1.69,
+
+    calcBMI: function () {
+        this.BMI = this.mass / (this.height * this.height);
+        return this.BMI
+    }
+
+};
+
+console.log(mark)
+console.log(mark.calcBMI())
 
 
+john = {
+    firstName: 'John',
+    lastName: 'Smith',
+    mass: 92,
+    height: 1.95,
 
+    // calcBMI: function () {
+    //     return this.mass / (this.height * this.height)
+    // }
 
+    calcBMI: function () {
+        this.BMI = this.mass / (this.height * this.height);
+        return this.BMI;
+    }
+
+};
+
+console.log(john)
+console.log(john.calcBMI())
+
+console.log(`${mark.firstName} ${mark.lastName}'s BMI (${mark.calcBMI()}) is higher than ${john.firstName} ${john.lastName}'s BMI (${john.calcBMI()})!`)
