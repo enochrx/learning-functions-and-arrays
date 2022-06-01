@@ -305,4 +305,9 @@ john = {
 console.log(john)
 console.log(john.calcBMI())
 
-console.log(`${mark.firstName} ${mark.lastName}'s BMI (${mark.calcBMI()}) is higher than ${john.firstName} ${john.lastName}'s BMI (${john.calcBMI()})!`)
+if (mark.BMI > john.BMI) { console.log(`${mark.firstName} ${mark.lastName}'s BMI (${mark.calcBMI()}) is higher than ${john.firstName} ${john.lastName}'s BMI (${john.calcBMI()})!`) } else if ((john.BMI > mark.BMI)) { console.log(`${john.firstName} ${john.lastName}'s BMI (${john.calcBMI()}) is higher than ${mark.firstName} ${mark.lastName}'s BMI (${mark.calcBMI()})!`) }
+
+
+
+//Iteration: the for loop
+
