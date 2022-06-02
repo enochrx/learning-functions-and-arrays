@@ -135,7 +135,8 @@ const ages = [calcAge2(years[years.length - 2]), calcAge2(years[0]), calcAge2(ye
 console.log(age1, age2, age3, age4);
 console.log(ages); */
 
-//Basic Array Operations(Method) 
+//Basic Array Operations(Method)
+/*
 const friends = ['David', 'Michael', 'Samuel'];
 //Add elements
 console.log(friends);
@@ -145,8 +146,9 @@ console.log(friends);
 friends.unshift('Gabriel'); //unshift is also a function that returns a value added to the beginning of an array list
 const newLength = friends.unshift('Gabriel')
 console.log(newLength)
-console.log(friends);
+console.log(friends);*/
 
+/*
 //Remove elements- do not need passing in argument
 friends.pop(); // removes last element
 console.log(friends)
@@ -195,6 +197,7 @@ totalValue = [tips[0] + bills[0], bills[1] + tips[1], bills[2] + tips[2]];
 
 console.log(totalValue);
 console.log(tips);
+*/
 
 //Intro to Objects - have values called 'properties' defined by curly braces '{}'
 /*const enoch = {
@@ -229,7 +232,7 @@ if (enoch[developerInfo]) {
     console.log(enoch[developerInfo]);
 } else { console.log("Invalid Entry! Choose from the options: 'firstName, lastName, job, friends, spouse' only"); prompt('What would you like to know about Enoch?: firstName, lastName, job, friends, spouse'); console.log(enoch[developerInfo]) };
  */
-
+/*
 //Object Method - functions in object
 const enoch = {
     firstName: 'Damilare',
@@ -265,7 +268,7 @@ console.log(enoch.age)
 
 console.log(enoch.getSummary())
 //console.log(enoch['calcAge'](1994))
-
+*/
 //////////////////////////
 //Coding Challenge #3
 mark = {
@@ -310,4 +313,47 @@ if (mark.BMI > john.BMI) { console.log(`${mark.firstName} ${mark.lastName}'s BMI
 
 
 //Iteration: the for loop
+// console.log('Lifting weights repetition 1 🏋️');
+// console.log('Lifting weights repetition 2 🏋️');
 
+// console.log('Lifting weights repetition 3 🏋️');
+
+// console.log('Lifting weights repetition 4 🏋️');
+
+// console.log('Lifting weights repetition 5 🏋️');
+// console.log('Lifting weights repetition 6 🏋️');
+
+// console.log('Lifting weights repetition 7 🏋️');
+
+// console.log('Lifting weights repetition 8 🏋️');
+
+// console.log('Lifting weights repetition 9 🏋️');
+
+// console.log('Lifting weights repetition 10 🏋️');
+
+//for loop keeps running while condition is TRUE
+for (let rep = 1; rep <= 10; rep = rep + 1) {
+    console.log(`Lifting weights repetition ${rep} 🏋️`) //rep++ also works in olace of rep = rep +1
+}
+
+//Looping Arrays, breaking and continuing
+const enoch = [
+    'Damilare',
+    'Olaniran',
+    2022 - 2015,
+    'Pharmacist',
+    'true',
+    ['Gabriel', 'Michael', 'Jonah', 'Oberd'],
+    'Nigerian'
+
+]
+//either this
+for (let i = 0; i < 7; i++) {
+    console.log(enoch[i])
+}
+
+
+//or this
+for (let i = 0; i < enoch.length; i++) {
+    console.log(enoch[i])
+}
