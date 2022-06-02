@@ -347,6 +347,8 @@ const enoch = [
     'Nigerian'
 
 ]
+
+const types = [];
 //either this
 for (let i = 0; i < 7; i++) {
     console.log(enoch[i])
@@ -356,4 +358,9 @@ for (let i = 0; i < 7; i++) {
 //or this
 for (let i = 0; i < enoch.length; i++) {
     console.log(enoch[i])
+
+
+    types[i] = typeof enoch[i]
 }
+
+console.log(types);
