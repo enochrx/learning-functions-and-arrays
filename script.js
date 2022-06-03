@@ -168,6 +168,8 @@ if (friends.includes('Michael')) {
     console.log('I once had a friend named Michael')
 }
 
+
+////////////////////////////////////////
 //Coding Challenge #2
 const calcTip = function (bill) {
     return bill <= 300 && bill >= 50 ? bill * 0.15 : bill * 0.2
@@ -178,7 +180,9 @@ const tip2 = calcTip(125);
 const tip3 = calcTip(555);
 const tip4 = calcTip(44);
 console.log(tip1, tip2, tip3, tip4);
+
 const bills = [125, 555, 44];
+
 //coding style #1
 let tips = [calcTip(125), calcTip(555), calcTip(44)]
 console.log(tips);
@@ -188,7 +192,7 @@ console.log(totalValue);
 
 //coding style #2
 tips = [calcTip(bills[0]), calcTip(bills[1]), calcTip(bills[2])];
-
+//Hard coding
 totalValue = [calcTip(bills[0] + bills[0]), bills[1] + calcTip(bills[1]), bills[2] + calcTip(bills[2])];
 console.log(totalValue);
 
@@ -269,6 +273,8 @@ console.log(enoch.age)
 console.log(enoch.getSummary())
 //console.log(enoch['calcAge'](1994))
 */
+
+/*
 //////////////////////////
 //Coding Challenge #3
 mark = {
@@ -332,17 +338,20 @@ if (mark.BMI > john.BMI) { console.log(`${mark.firstName} ${mark.lastName}'s BMI
 // console.log('Lifting weights repetition 10 🏋️');
 
 //for loop keeps running while condition is TRUE
+//in for loop, each loop has 3 conponents; 1. counter, 2. condition, 3. increase counter
 for (let rep = 1; rep <= 10; rep = rep + 1) {
     console.log(`Lifting weights repetition ${rep} 🏋️`) //rep++ also works in olace of rep = rep +1
 }
+//use either rep <= 10 0r <11
 
-//Looping Arrays, breaking and continuing
+
+//Looping Arrays
 const enoch = [
     'Damilare',
     'Olaniran',
     2022 - 2015,
     'Pharmacist',
-    'true',
+    true,
     ['Gabriel', 'Michael', 'Jonah', 'Oberd'],
     'Nigerian'
 
@@ -350,9 +359,9 @@ const enoch = [
 
 const types = [];
 //either this
-for (let i = 0; i < 7; i++) {
-    console.log(enoch[i])
-}
+// for (let i = 0; i < 7; i++) {
+//     console.log(enoch[i])
+// }
 
 
 //or this
@@ -360,7 +369,121 @@ for (let i = 0; i < enoch.length; i++) {
     console.log(enoch[i])
 
 
-    types[i] = typeof enoch[i]
+    //types[i] = typeof enoch[i]
+    types.push(typeof enoch[i]) //in every iteration, new value is added into the empty 'types' array for every loop. push is used so a new value goes into the array
 }
 
 console.log(types);
+
+//other example using a year array
+
+const years = [1999, 2002, 2004, 2005, 2014, 2020, 2021];
+const ages = [];
+
+for (let i = 0; i < years.length; i++) {
+    ages.push(2033 - years[i])
+}
+console.log(ages)
+
+//Loop continue and break
+//--------CONTINUE------
+for (let i = 0; i < enoch.length; i++) {
+    if (typeof enoch[i] !== 'string') continue;
+    console.log(enoch[i]);
+};
+
+//---------BREAK-----------
+for (let i = 0; i < enoch.length; i++) {
+    if (typeof enoch[i] === 'number') break;
+    console.log(enoch[i]);
+};
+*/
+/*
+///Backward Loop
+const enoch = [
+    'Damilare',
+    'Olaniran',
+    2022 - 2015,
+    'Pharmacist',
+    ['Gabriel', 'Michael', 'Jonah', 'Oberd'],
+    'Nigerian'
+]
+
+//Looping backwards--4, 3, 2, 1, 0
+for (let i = enoch.length - 1; i >= 0; i--) {
+    console.log(enoch[i], i)
+}
+
+///Loops in Loop
+for (let exercise = 1; exercise < 4; exercise++) {
+    console.log(`----Starting exercise ${exercise}`)
+
+    for (let rep = 1; rep < 6; rep++) {
+        console.log(`Lifting Weight repitition ${rep}`);
+    }
+};
+*/
+
+
+////While Loop
+
+//for the while loop, we can only specify the condition and then the other components are manually defined
+/*
+let rep = 1;
+while (rep < 11) {
+    console.log(`Lifting weights repitition ${rep} `);
+    rep++;
+}
+
+//practical example of while loop usefulness is rolling a dice
+
+//let dice = math.random() * 6 //this will return a decimal on the console
+let dice = Math.trunc(Math.random() * 6) + 1; // Math.trunc gets rid of the decimeal and +1 makes the numbers in the dice 6
+while (dice !== 6) {
+    console.log(`You rolled a ${dice}`);
+    dice = Math.trunc(Math.random() * 6) + 1; // added to break of out the loop
+    if (dice === 6) {
+        console.log(`You rolled a 6! YOU WIN!!!...`);
+    }
+}
+*/
+
+/////////////////////////
+//Coding Challenge #4
+const bills = [
+    22,
+    295,
+    176,
+    440,
+    37,
+    105,
+    10,
+    1100,
+    86,
+    52
+]
+
+const tips = [];
+const totals = [];
+
+//Bonus Question
+for (let i = 0; i < bills.length; i++) {
+    tips.push(bills[i] <= 300 && bills[i] >= 50 ? bills[i] * 0.15 : bills[i] * 0.2)
+    totals.push(tips[i] + bills[i])
+}
+console.log(bills, tips, totals)
+
+const sum = []
+//bills[0] + bills[1] + bills[2] + bills[3] + bills[4] + bills[5] + bills[6] + bills[7] + bills[8] + bills[9]
+
+const calcAverage = function (arr) {
+    let sum = 0;
+    for (let i = 0; i < arr.length; i++) {
+        sum = sum + arr[i]
+        //also, sum += arr[i];
+    }
+    return sum / arr.length
+}
+
+console.log(calcAverage(tips));
+console.log(calcAverage(totals));
